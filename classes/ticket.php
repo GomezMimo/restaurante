@@ -8,12 +8,17 @@ include 'classes/database.php';
 			$database->connect();
 			$query = "SELECT denomination FROM ticket";
 			$tickets = $database->connection->query($query);
-
 			return $tickets;
 		}
 
 		function getIdRestaurant($restaurantId) {
-			
+			/*$database = new Database();
+			$database->connect();
+			$query = "SELECT FROM restaurant WHERE id = $restaurantId";
+			$restaurant = $database->connection->query($query);
+			$restaurantExist = restaurant > 0; */
+			echo $restaurantId;
+			//return $restaurantExist;	
 		}
 
 		function addTicket($ticketId, $restaurantId){

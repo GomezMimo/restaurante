@@ -1,8 +1,9 @@
 <?php
+	include 'database.php';
 	class Restaurant {
 		function getRestaurantId($restauranId) {
-			//$database = new Database();
-			//$database->connect();			
+			$database = new Database();
+			$database->connect();	
 		}
 	}
 ?>

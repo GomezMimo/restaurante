@@ -1,5 +1,5 @@
 <?php
-include 'classes/database.php';
+include 'database.php';
 
 	class Login {
 

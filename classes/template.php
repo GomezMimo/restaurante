@@ -39,16 +39,16 @@ Class Template {
 		$html = '
     <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
         <!-- Brand -->
-        <a class="navbar-brand" href="#"><i class="fa fa-cutlery" aria-hidden="true"></i>
+        <a class="navbar-brand" href="/restaurante"><i class="fa fa-cutlery" aria-hidden="true"></i>
  Restaurant App</a>
-        <ul class="nav navbar-nav pull-xs-left">
+        <!-- Links -->
+        <ul class="nav navbar-nav pull-xs-right">
             <li class="nav-item">
                 <a class="nav-link"><span><i class="fa fa-user-o" aria-hidden="true"></i>
 </span> ' . $userName . '</a>
             </li>
-        </ul>
-        <!-- Links -->
-        <ul class="nav navbar-nav pull-xs-right">';
+        ';
+
 
         foreach($links as $link){
             $activeStyle = $link["isActive"] ? "active" : "";

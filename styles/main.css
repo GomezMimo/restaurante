@@ -174,3 +174,29 @@ body {
   min-height: 550px;
   border-radius: 4px;
 }
+
+
+.container-ticket-form {
+    margin: 0 auto;
+    width: 40%;
+}
+
+.container-ticket-form  input, select {
+    margin-bottom: 30px;
+}
+
+.ticket-header {
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
