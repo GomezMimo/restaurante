@@ -2,18 +2,23 @@
 
 
 ?>
-
-${folder}/
-|__/index.php
-|__/signin.php
-|__/restaurants.php
-|__/tickets.php	
-|__/classes/database.php
-|__/classes/restaurante.php
-|__/classes/ticket.php
-|__/classes/login.php
-|__/classes/restaurante.php
-|__/scripts/main.js
-|__/styles/main.css
-|__/database/dump.sql
-|__/README.md
+<div class="container">
+    <div class="card card-container">
+        <i class="fa fa-user-circle fa-4" aria-hidden="true"></i>
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div id="remember" class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+        </form><!-- /form -->
+        <a href="#" class="forgot-password">
+            Forgot the password?
+        </a>
+    </div><!-- /card-container -->
+</div><!-- /container -->
