@@ -3,17 +3,22 @@ include 'classes/database.php';
 
 	class Login {
 
-		// boolean
 		function signIn($userName, $password) {
 			$database = new Database();
 			$database->connect();
-			$query = "SELECT * FROM app_user";
-			
-			foreach($database->connection->query($query) as $row) {
-			    echo '<li>' . $row['id'].' '.$row['user_name'] . ' ' . $row['password'] . '</li>'; 
+			$query = "SELECT * FROM app_user WHERE user_name = '$userName' AND password = '$password' ";
+			$isUserValid = $database->connection->query($query)->rowCount() > 0;
+
+			if ($isUserValid) {
+				session_start();
+				$_SESSION["isLogged"] = true;
+				$_SESSION["userName"] = $userName;
+				header("Location: index.php");
+			} else{
+				header("Location: index.php?errorCode=1");
 			}
 			
-			header("Location: index.php?errorCode=1");
+			
 			$database->close();
 		}
 

@@ -14,6 +14,7 @@ Class Template {
         $html =  "<!DOCTYPE html>";
         $html .= "\n<html lang=\"es\">";
         $html .= "\n  <head>";
+        $html .= "\n   <meta charset=\"UTF-8\">";
         $html .= "\n   <title>" . $this->getTitlePage() . "</title>";
         $html .= $this->getStyles();
         $html .= "\n  </head>";
@@ -21,9 +22,50 @@ Class Template {
         return $html;
     }
 	
-	function getMenu(){
-		$html = "<div>menu</div>";
-		return $html; 
+	function getMenu($userName, $currentPage) {
+        $links =[
+            "tickets" => array(
+                    "url" => "tickets.php",
+                    "isActive" => ($currentPage == "tickets"),
+                    "name" => "Tickets" 
+                ),
+            "restaurant" => array(
+                    "url" => "restaurants.php",
+                    "isActive" => ($currentPage == "restaurants"),
+                    "name" => "Restaurants" 
+                )
+        ];
+
+		$html = '
+    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#"><i class="fa fa-cutlery" aria-hidden="true"></i>
+ Restaurant App</a>
+        <ul class="nav navbar-nav pull-xs-left">
+            <li class="nav-item">
+                <a class="nav-link"><span><i class="fa fa-user-o" aria-hidden="true"></i>
+</span> ' . $userName . '</a>
+            </li>
+        </ul>
+        <!-- Links -->
+        <ul class="nav navbar-nav pull-xs-right">';
+
+        foreach($links as $link){
+            $activeStyle = $link["isActive"] ? "active" : "";
+
+            $html .= '<li class="nav-item">
+                <a class="nav-link ' . $activeStyle . '" href="' . $link["url"] . '">' . $link["name"] .'</a>
+            </li>';
+        }
+            
+        $html .= '
+                <li class="nav-item">
+                    <a class="nav-link" href="signout.php">Sign Out</a>
+                </li>
+            </ul>
+        </nav>';
+
+        return $html;
 	}
 	
     function getFooter(){

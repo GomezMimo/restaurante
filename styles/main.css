@@ -2,9 +2,18 @@
  * General styles
  */
 body, html {
-    height: 96%;
+    height: 100%;
     background-repeat: no-repeat;
     background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+}
+
+body {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
 }
 
 .card-container.card {
@@ -152,4 +161,16 @@ body, html {
     color: red;
     font-size:12px;
     text-align: center;
+}
+
+
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background-color: white;
+  min-height: 550px;
+  border-radius: 4px;
 }

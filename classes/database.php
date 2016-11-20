@@ -9,8 +9,7 @@ class Database{
 	var $connection;
 
 	function connect(){
-		$this->connection = new PDO("mysql:$this->host_db=;dbname=$this->name_db;", $this->user_db, $this->pass_db);
-		echo 'se conecto parce!';
+		$this->connection = new PDO("mysql:$this->host_db=;dbname=$this->name_db;charset=utf8", $this->user_db, $this->pass_db);
 	}
 
 	function close(){
