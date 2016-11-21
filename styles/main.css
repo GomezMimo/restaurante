@@ -189,6 +189,11 @@ body {
     margin-bottom: 30px;
 }
 
+.success-message {
+    color: #111B40;
+    font-size: 18px;
+    margin-top: 40px;
+}
 
 
 

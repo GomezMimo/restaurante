@@ -19,6 +19,13 @@ if(!isset($_SESSION["isLogged"]) || !$_SESSION["isLogged"]) {
 		$errorMessage = "<p class=\"error-message\">ID restaurant doesn't exist, validate it again.</p>";
 	} 
 
+	$successCode = isset($_GET['success']) ? $_GET['success'] : 0;
+	$successMessage = '';
+
+	if ($successCode == 1) {
+		$successMessage = "<p class=\"success-message\">The ticket has been added successfully</p>";
+	} 
+
 	$tickets = "";
 	
 	foreach ($ticket->getTicketTypes() as $ticketOption) {
@@ -38,6 +45,7 @@ if(!isset($_SESSION["isLogged"]) || !$_SESSION["isLogged"]) {
 		    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ID restaurant" name="restaurant">	
 		    <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Add ticket</button>	  	
 	  	</form>
+	  	' . $successMessage . '
       </div>
     </div><!-- /.container -->
 	';

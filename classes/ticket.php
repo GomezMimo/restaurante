@@ -48,7 +48,7 @@ include 'classes/database.php';
 				if($restaurantExist) {
 					session_start();
 					$_SESSION["restaurantExist"] = true;								
-					header("Location: ./tickets.php");
+					header("Location: ./tickets.php?success=1");
 				}else {
 					session_start();
 					$_SESSION["restaurantExist"] = false;
